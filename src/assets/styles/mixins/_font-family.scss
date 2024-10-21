@@ -1,0 +1,14 @@
+@mixin logoFont($weight: 400) {
+    font-family: "lincoln-electric-regular", sans-serif;
+    font-weight: $weight;
+    font-style: normal;
+    color: $white;
+}
+
+@mixin textFont($weight: 400) {
+    font-family: "noto-sans", sans-serif;
+    font-weight: $weight;
+    font-style: normal;
+    color: $white;
+}
+
