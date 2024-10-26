@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
+import PBtn from './components/PBtn/PBtn.vue'
 </script>
 
 <template>
@@ -12,6 +13,7 @@ import HelloWorld from './components/HelloWorld.vue'
     </a>
   </div>
   <HelloWorld msg="Vite + Vue" />
+  <p-btn label="Button Label" size="small" :primary="true"></p-btn>
   <p class="test">tests</p>
 </template>
 
