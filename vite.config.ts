@@ -28,7 +28,11 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@import "@assets/styles/import.scss";`,
+        additionalData: `
+        @use "@assets/styles/reset.scss" as *;
+        @use "@assets/styles/import.scss" as *;
+        `,
+        api: "modern-compiler",
       }
     }
   }

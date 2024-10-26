@@ -3,25 +3,25 @@ $tab: 768px;
 $sp: 480px;
 
 @mixin pc {
-    @media (max-width: ($pc)) {
-        @content;
-    }
+  @media (max-width: ($pc)) {
+    @content;
+  }
 }
 
 @mixin tablet {
-    @media (max-width: ($tab)) {
-        @content;
-    }
+  @media (max-width: ($tab)) {
+    @content;
+  }
 }
 
 @mixin sp {
-    @media (max-width: ($sp)) {
-        @content;
-    }
+  @media (max-width: ($sp)) {
+    @content;
+  }
 }
 
 @mixin only-tablet-pc {
-    @media (min-width: ($tab)) {
-        @content;
-    }
+  @media (min-width: ($tab)) {
+    @content;
+  }
 }
