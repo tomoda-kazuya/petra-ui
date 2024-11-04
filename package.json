@@ -13,7 +13,18 @@
     "lint:fix": "eslint 'src/**/*.{js,ts,vue}' --fix && stylelint 'src/**/*.{css,scss,vue}' --fix",
     "format": "prettier --write 'src/**/*.{js,ts,vue,css,scss}'",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "src/**/*.{js,ts,vue}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "src/**/*.{css,scss,vue}": [
+      "prettier --write",
+      "stylelint --fix"
+    ]
   },
   "dependencies": {
     "normalize.css": "^8.0.1",
@@ -35,6 +46,8 @@
     "eslint-plugin-storybook": "^0.10.1",
     "eslint-plugin-vue": "^9.29.1",
     "globals": "^15.11.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
     "sass": "^1.80.3",
     "storybook": "^8.3.6",
