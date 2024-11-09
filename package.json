@@ -1,15 +1,25 @@
 {
   "name": "petra-ui",
   "private": false,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A UI component library for Vue 3",
-  "main": "dist/petra-ui.cjs.js",
-  "module": "dist/petra-ui.esm.js",
-  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/petra-ui.es.js",
+      "require": "./dist/petra-ui.umd.js"
+    }
+  },
+  "main": "./dist/petra-ui.umd.js",
+  "module": "./dist/petra-ui.es.js",
+  "types": "./dist/types/index.d.ts",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc -b && vite build",
+    "build": "vite build && vue-tsc -b ",
     "preview": "vite preview",
     "lint": "eslint 'src/**/*.{js,ts}' && stylelint 'src/**/*.{css,scss,vue}'",
     "lint:es": "eslint 'src/**/*.{js,ts,vue}'",
