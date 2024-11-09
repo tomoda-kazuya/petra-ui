@@ -1,7 +1,11 @@
 {
   "name": "petra-ui",
-  "private": true,
-  "version": "0.0.0",
+  "private": false,
+  "version": "0.0.1",
+  "description": "A UI component library for Vue 3",
+  "main": "dist/petra-ui.cjs.js",
+  "module": "dist/petra-ui.esm.js",
+  "types": "dist/types/index.d.ts",
   "type": "module",
   "scripts": {
     "dev": "vite",
