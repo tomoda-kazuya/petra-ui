@@ -1,7 +1,11 @@
 {
   "name": "petra-ui",
-  "private": true,
-  "version": "0.0.0",
+  "private": false,
+  "version": "0.0.1",
+  "description": "A UI component library for Vue 3",
+  "main": "dist/petra-ui.cjs.js",
+  "module": "dist/petra-ui.esm.js",
+  "types": "dist/types/index.d.ts",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,20 +15,46 @@
     "lint:es": "eslint 'src/**/*.{js,ts,vue}'",
     "lint:style": "stylelint src/**/*.{css,scss,vue}",
     "lint:fix": "eslint 'src/**/*.{js,ts,vue}' --fix && stylelint 'src/**/*.{css,scss,vue}' --fix",
-    "format": "prettier --write 'src/**/*.{js,ts,vue,css,scss}'"
+    "format": "prettier --write 'src/**/*.{js,ts,vue,css,scss}'",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "src/**/*.{js,ts,vue}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "src/**/*.{css,scss,vue}": [
+      "prettier --write",
+      "stylelint --fix"
+    ]
   },
   "dependencies": {
     "normalize.css": "^8.0.1",
     "vue": "^3.5.10"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^1.9.0",
+    "@storybook/addon-essentials": "^8.3.6",
+    "@storybook/addon-interactions": "^8.3.6",
+    "@storybook/addon-links": "^8.3.6",
+    "@storybook/addon-onboarding": "^8.3.6",
+    "@storybook/blocks": "^8.3.6",
+    "@storybook/test": "^8.3.6",
+    "@storybook/vue3": "^8.3.6",
+    "@storybook/vue3-vite": "^8.3.6",
     "@types/node": "^22.7.7",
     "@vitejs/plugin-vue": "^5.1.4",
     "eslint": "^9.13.0",
+    "eslint-plugin-storybook": "^0.10.1",
     "eslint-plugin-vue": "^9.29.1",
     "globals": "^15.11.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
     "sass": "^1.80.3",
+    "storybook": "^8.3.6",
     "stylelint": "^16.10.0",
     "stylelint-config-prettier-scss": "^1.0.0",
     "stylelint-config-recess-order": "^5.1.1",
@@ -32,7 +62,13 @@
     "stylelint-config-standard-scss": "^13.1.0",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.11.0",
+    "unplugin-vue-components": "^0.27.4",
     "vite": "^5.4.8",
     "vue-tsc": "^2.1.6"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended"
+    ]
   }
 }
